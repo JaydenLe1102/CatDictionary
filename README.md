@@ -71,3 +71,56 @@ Allows users to learn more about different breeds of cat through text, images, a
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
+
+## Schema 
+### Models
+#### Breed
+
+   | Property         | Type     | Description |
+   | -------------    | -------- | ------------|
+   | id               | String   | unique id for each breed |
+   | name             | String   | name of the breed |
+   | description      | String   | cat description |
+   | temperament      | String   | cat temperament |
+   | adaptability     | Int      | from 0 to 5 rating the adaptability of the cat breed |
+   | affection_level  | Int      | from 0 to 5 rating the affection level of the cat breed |
+   | child_friendly   | Int      | from 0 to 5 rating the child friendly of the cat breed |
+   | dog_friendly     | Int      | from 0 to 5 rating the dog friendly of the cat breed |
+   | energy_level     | Int      | from 0 to 5 rating the energy level of the cat breed |
+   | grooming         | Int      | from 0 to 5 rating the grooming level of the cat breed |
+   | health_issues    | Int      | from 0 to 5 rating the health issues of the cat breed |
+   | intelligence     | Int      | from 0 to 5 rating the intelligence level of the cat breed |
+   | life_span        | String   | life span of the cat breed |
+   | origin           | String   | what country the breed from|
+   | shedding_level   | Int      | from 0 to 5 rating the shedding level of the cat breed |
+   | social_needs     | Int      | from 0 to 5 rating the social_needs of the cat breed |
+   | stranger_friendly| Int      | from 0 to 5 rating the stranger friendly of the cat breed |
+   | vocalisation     | Int      | from 0 to 5 rating the vocalisation of the cat breed |
+   | wikipedia_url    | String   | wikipidia url page of the cat breed |
+
+### Networking
+#### List of network requests by screen
+   - Home Feed Screen and search Feed Screen
+
+      - (Read/GET) Query all the cat breed that contain the key
+         ```swift
+        val url = "https://api.thecatapi.com/v1/breeds/search?q=$key&api_key=$apikey"
+        val client = AsyncHttpClient()
+        client.get(url, object: JsonHttpResponseHandler(){
+            override fun onFailure(
+                statusCode: Int,
+                headers: Headers?,
+                response: String?,
+                throwable: Throwable?
+            ) {
+                // called when response HTTP status is "4XX" (eg. 401, 403, 404)
+                Log.e(TAG, "onFailure $statusCode")
+               }
+
+            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) { // the ? mark means nullable
+                // called when response HTTP status is "200 OK"
+            }
+
+        })
+
+        
