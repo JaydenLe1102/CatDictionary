@@ -65,6 +65,9 @@ Allows users to learn more about different breeds of cat through text, images, a
 
 ## Wireframes
 
+<img src='HomeIndexSearchScreensWireframeImage.png' title='Wireframe image 1' width='' alt='Wireframe image 1' />
+<img src='WatchScreenWireframeImage.png' title='Wireframe image 2' width='' alt='Wireframe image 2' />
+
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
