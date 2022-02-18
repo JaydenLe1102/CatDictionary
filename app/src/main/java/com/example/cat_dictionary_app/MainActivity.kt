@@ -3,20 +3,29 @@ package com.example.cat_dictionary_app
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.example.cat_dictionary_app.fragments.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var bottom_navigation : BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        findViewById<BottomNavigationView>(R.id.bottom_navigation).setOnItemSelectedListener {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        bottom_navigation = findViewById(R.id.bottom_navigation)
+        bottom_navigation.setOnItemSelectedListener {
             item ->
 
+            var fragmentToShow: Fragment? = null
             // Find out which item was clicked
             when (item.itemId) {
                 R.id.action_home->{
-                    // TODO: Navigate to the Home Screen
+                    fragmentToShow = HomeFragment()
                     Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                 }
                 R.id.action_search->{
@@ -33,8 +42,19 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
+            if (fragmentToShow != null) {
+                // call commit so that things happen
+                // replace the container in the layout file with the fragment that we want to show
+                fragmentManager.beginTransaction().replace(R.id.flContainer, fragmentToShow).commit()
+            }
+
             // Return true to say that we've handled this user interaction on the item
             true
         }
+
+        // Set default fragment to show if none of the button on bottom navigation bar is clicked
+        bottom_navigation.selectedItemId = R.id.action_home
     }
+
+
 }
