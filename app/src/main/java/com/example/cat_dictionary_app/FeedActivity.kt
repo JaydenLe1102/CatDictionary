@@ -1,6 +1,7 @@
 package com.example.cat_dictionary_app
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -13,6 +14,8 @@ class FeedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         val fragmentManager: FragmentManager = supportFragmentManager
         bottom_navigation = findViewById(R.id.bottom_navigation)
@@ -52,6 +55,12 @@ class FeedActivity : AppCompatActivity() {
 
         // Set default fragment to show if none of the button on bottom navigation bar is clicked
         bottom_navigation.selectedItemId = R.id.action_home
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu) : Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.menu_main, menu);
+        return true;
     }
 
 
