@@ -5,6 +5,7 @@ import android.view.inspector.IntFlagMapping
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 import org.json.JSONArray
+import org.json.JSONObject
 
 @Parcelize
 data class Breed (
@@ -27,7 +28,7 @@ data class Breed (
     val social_needs: Int,
     val stranger_friendly: Int,
     val vocalisation: Int,
-    //val imageurl: String
+    val imageurl: String
 
     ):Parcelable {
 
@@ -59,17 +60,15 @@ data class Breed (
                             breedJson.getInt("social_needs"),
                             breedJson.getInt("stranger_friendly"),
                             breedJson.getInt("vocalisation"),
-                            //breedJson.getString()
+                            getImageurl(breedJson.getJSONObject("image"))
                         )
                     )
                 }
-
-
                 return breeds
             }
 
-            fun getImageurl(){
-
+            fun getImageurl(jsonObject: JSONObject):String{
+                return jsonObject.getString("url")
             }
 
         }
