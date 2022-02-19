@@ -54,15 +54,18 @@ class HomeFragment : Fragment() {
         val urlToGet = "https://api.thecatapi.com/v1/breeds"
 
         val headers = RequestHeaders()
-        headers["x-api-key"] = CAT_API_KEY
-        headers["pagination-count"] = "1"
+        headers.put("x-api-key",  CAT_API_KEY)
+//        //headers["Pagination-Count"] = "1"
 
         val params = RequestParams()
+        params.put("attach_breed", "rag")
+        //params.put("x-api-key",  CAT_API_KEY)
 
-        client.get(urlToGet, headers, params, object :
+        client.get(urlToGet,headers, params, object :
             JsonHttpResponseHandler() {
-            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON?) {
+            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) {
                 Log.i(TAG, "onSuccess!")
+                Log.i(TAG, json.toString())
             }
 
             override fun onFailure(
@@ -71,8 +74,8 @@ class HomeFragment : Fragment() {
                 response: String?,
                 throwable: Throwable?
             ) {
-                // TODO: debug status cod 500
                 Log.i(TAG, "onFailure $statusCode")
+                Log.e(TAG, "Fail with reason $response")
             }
 
         })
@@ -80,6 +83,6 @@ class HomeFragment : Fragment() {
 
     companion object {
         val TAG = "HomeFragment"
-        const val CAT_API_KEY = BuildConfig.CONSUMER_KEY // See more in apikey.properties
+        const val CAT_API_KEY = BuildConfig.CONSUMER_KEY.toString()// See more in apikey.properties
     }
 }

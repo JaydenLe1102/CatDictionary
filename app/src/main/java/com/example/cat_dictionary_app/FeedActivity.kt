@@ -1,7 +1,6 @@
 package com.example.cat_dictionary_app
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -9,14 +8,8 @@ import androidx.fragment.app.FragmentManager
 import com.example.cat_dictionary_app.fragments.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-<<<<<<< HEAD:app/src/main/java/com/example/cat_dictionary_app/MainActivity.kt
-class MainActivity : AppCompatActivity() {
-
-    lateinit var bottom_navigation : BottomNavigationView
-
-=======
 class FeedActivity : AppCompatActivity() {
->>>>>>> 39752ebb31a72679b0615a303930982cd13cc4bb:app/src/main/java/com/example/cat_dictionary_app/FeedActivity.kt
+    lateinit var bottom_navigation : BottomNavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
