@@ -12,13 +12,12 @@ import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.cat_dictionary_app.BuildConfig
+import com.example.cat_dictionary_app.FeedActivity
 import com.example.cat_dictionary_app.R
 import okhttp3.Headers
 
 
 class HomeFragment : Fragment() {
-
-    var client = AsyncHttpClient()
 
     lateinit var postsRecyclerView : RecyclerView
 
@@ -47,39 +46,10 @@ class HomeFragment : Fragment() {
         // 5. Set layout manager on RecyclerView
 
         // Call populateHomeFeed once var client is initialized
-        populateHomeFeed();
+        (activity as FeedActivity).populateHomeFeed();
     }
 
-    fun populateHomeFeed() {
-        val urlToGet = "https://api.thecatapi.com/v1/breeds"
 
-        val headers = RequestHeaders()
-        headers.put("x-api-key",  CAT_API_KEY)
-//        //headers["Pagination-Count"] = "1"
-
-        val params = RequestParams()
-        params.put("attach_breed", "rag")
-        //params.put("x-api-key",  CAT_API_KEY)
-
-        client.get(urlToGet,headers, params, object :
-            JsonHttpResponseHandler() {
-            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) {
-                Log.i(TAG, "onSuccess!")
-                Log.i(TAG, json.toString())
-            }
-
-            override fun onFailure(
-                statusCode: Int,
-                headers: Headers?,
-                response: String?,
-                throwable: Throwable?
-            ) {
-                Log.i(TAG, "onFailure $statusCode")
-                Log.e(TAG, "Fail with reason $response")
-            }
-
-        })
-    }
 
     companion object {
         val TAG = "HomeFragment"
