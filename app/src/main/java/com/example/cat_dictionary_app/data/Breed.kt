@@ -1,8 +1,7 @@
 package com.example.cat_dictionary_app.data
 
 import android.os.Parcelable
-import android.view.inspector.IntFlagMapping
-import kotlinx.parcelize.IgnoredOnParcel
+import android.util.Log
 import kotlinx.parcelize.Parcelize
 import org.json.JSONArray
 import org.json.JSONObject
@@ -15,7 +14,7 @@ data class Breed (
     val temperament: String,
     val life_span: String,
     val origin: String,
-    val wikipedia_url: String,
+//    val wikipedia_url: String,
     val adaptability: Int,
     val affection_level: Int,
     val child_friendly: Int,
@@ -33,12 +32,23 @@ data class Breed (
     ):Parcelable {
 
         companion object{
+            val TAG = "Breed"
+
             fun fromJsonArray(breedjsonarray: JSONArray): ArrayList<Breed>
             {
                 val breeds = ArrayList<Breed>()
                 for ( i in 0 until breedjsonarray.length())
                 {
                     val breedJson = breedjsonarray.getJSONObject(i)
+
+                    // imageURL has a default URL in case the breed jsonObj doesn't have
+                    // key "image" in itself or key "url" in its image jsonObj
+                    var imageURL = "https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png"
+                    if (breedJson.has("image") &&
+                        breedJson.getJSONObject("image").has("url")) {
+                        imageURL = getImageURL(breedJson.getJSONObject("image"))
+                    }
+
                     breeds.add(
                         Breed(
                             breedJson.getString("id"),
@@ -47,7 +57,7 @@ data class Breed (
                             breedJson.getString("temperament"),
                             breedJson.getString("life_span"),
                             breedJson.getString("origin"),
-                            breedJson.getString("wikipedia_url"),
+//                            breedJson.getString("wikipedia_url"),
                             breedJson.getInt("adaptability"),
                             breedJson.getInt("affection_level"),
                             breedJson.getInt("child_friendly"),
@@ -60,14 +70,14 @@ data class Breed (
                             breedJson.getInt("social_needs"),
                             breedJson.getInt("stranger_friendly"),
                             breedJson.getInt("vocalisation"),
-                            getImageurl(breedJson.getJSONObject("image"))
+                            imageURL
                         )
                     )
                 }
                 return breeds
             }
 
-            fun getImageurl(jsonObject: JSONObject):String{
+            fun getImageURL(jsonObject: JSONObject):String{
                 return jsonObject.getString("url")
             }
 
