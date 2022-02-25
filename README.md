@@ -31,7 +31,6 @@ Allows users to learn more about different breeds of cat through text, images, a
 
 * User searches for a specific breed of cat that they want to learn more about and the search bar will display dropdown menu options which they can tap on
 * The information page that contains text, images, and a video about a breed of cat is displayed after the user tapping on a choice from the dropdown menu
-* Settings (Accesibility, Notification, General, etc.)
 
 **Optional Nice-to-have Stories**
 
@@ -124,3 +123,50 @@ Allows users to learn more about different breeds of cat through text, images, a
         })
 
         
+## User Stories
+
+The following **required** functionality is completed:
+
+- [x] User can view summary posts of random cat breeds on the home view.
+- [x] User can pull to refresh home view so that summary posts of random cat breeds are reshuffled and displayed.
+- [ ] Tapping on a summary post on the home view or a search result on the search view leads the user to a view that contains more detailed information of the cat breed selected
+- [ ] User can see YouTube videos of random cat breeds displayed in the watch view. User can tap on any of the videos to start watching.
+- [ ] User cann see images of random cat breeds displayed in the gallery view.
+- [ ] The user should switch between different tabs - viewing all summary posts of random cat breeds (home view), search for detail information of a specific cat breed (search view), watch videos of random cat breeds (watch view), see images of random cat breeds (gallery view) using fragments and a Bottom Navigation View.
+
+The following **optional** features are implemented:
+
+- [ ] User sees app icon in home screen and styled bottom navigation view
+- [ ] Style the feed.
+- [ ] User can make choices on what (categories of images, breeds, static/animated pictures) and how (random/ascending/descending order, the amount of images) the image view shows images.
+- [ ] Show the username and creation time for each post.
+- [ ] User can create a new Iamge in the system by uploading a valid .jpg or .png file containing a Cat.
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='CodepathUnit7Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).    
+
+## Open-source libraries used
+
+- [Android Async HTTP](https://github.com/codepath/CPAsyncHttpClient) - Simple asynchronous HTTP requests with JSON parsing
+- [Glide](https://github.com/bumptech/glide) - Image loading and caching library for Android
+
+## License
+
+    Copyright [yyyy] [name of copyright owner]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
