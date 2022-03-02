@@ -14,13 +14,14 @@ import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.cat_dictionary_app.BuildConfig
+import com.example.cat_dictionary_app.MainActivity
 import com.example.cat_dictionary_app.R
 import com.example.cat_dictionary_app.data.Breed
 import okhttp3.Headers
 import org.json.JSONException
 
 
-class HomeFragment : Fragment() {
+open class HomeFragment : Fragment() {
 
     private lateinit var postsRecyclerView : RecyclerView
     lateinit var breedSummaryPostAdapter : BreedSummaryPostAdapter
@@ -34,6 +35,12 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+//        val listbreeds = (activity as MainActivity).getBreedList()
+//        if (!listbreeds.isEmpty()){
+//            breeds.clear()
+//            breeds.addAll(listbreeds)
+//        }
+
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
@@ -72,7 +79,9 @@ class HomeFragment : Fragment() {
         postsRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         // Call populateHomeFeed once var client is initialized
+
         populateHomeFeed()
+
     }
 
     private fun refreshTimeline() {
@@ -82,7 +91,7 @@ class HomeFragment : Fragment() {
         swipeContainer.setRefreshing(false)
     }
 
-    private fun populateHomeFeed(query: Int = 0) {
+    public open fun populateHomeFeed(query: Int = 0) {
         // I put this function here because the search function need this function too.
         // You can call this function in the HomeFragment by using
         // (activity as MainActivity).populateHomeFeed();
@@ -123,6 +132,8 @@ class HomeFragment : Fragment() {
 
         })
     }
+
+
 
     companion object {
         const val TAG = "HomeFragment"

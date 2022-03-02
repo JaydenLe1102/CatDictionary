@@ -65,4 +65,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    //coroutine for async function call
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
 }

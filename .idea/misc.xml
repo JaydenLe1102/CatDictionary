@@ -4,14 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/breed_summary_post.xml" value="0.3018867924528302" />
-        <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/fragment_home.xml" value="0.15202702702702703" />
+        <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/fragment_home.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/item_post.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.27447916666666666" />
+        <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/drawable-anydpi/searchIconActionBar.xml" value="0.33" />
+        <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/drawable-anydpi/search_icon_actionbar.xml" value="0.452" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/drawable/cat_logo_background.xml" value="0.3195" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.3195" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/layout/activity_main.xml" value="0.5744791666666667" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/layout/fragment_home.xml" value="0.5744791666666667" />
+        <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/layout/fragment_search.xml" value="0.32760416666666664" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/layout/item_post.xml" value="0.5744791666666667" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.5744791666666667" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/menu/menu_main.xml" value="0.31666666666666665" />
