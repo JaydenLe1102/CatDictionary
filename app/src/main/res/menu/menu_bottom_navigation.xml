@@ -8,21 +8,15 @@
         android:title="Home"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search"
-        android:visible="true"
-        app:showAsAction="always" />
-    <item
         android:id="@+id/action_watch"
         android:icon="@drawable/ic_baseline_ondemand_video_24"
         android:title="Watch"
         android:visible="true"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_index"
-        android:icon="@drawable/ic_baseline_menu_24"
-        android:title="Index"
+        android:id="@+id/action_gallery"
+        android:icon="@drawable/ic_baseline_image_24"
+        android:title="Gallery"
         android:visible="true"
         app:showAsAction="always" />
 

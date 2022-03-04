@@ -14,7 +14,6 @@ import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.cat_dictionary_app.BuildConfig
-import com.example.cat_dictionary_app.MainActivity
 import com.example.cat_dictionary_app.R
 import com.example.cat_dictionary_app.data.Breed
 import okhttp3.Headers
@@ -49,7 +48,7 @@ open class HomeFragment : Fragment() {
         // This is where we set up our views and clicklisteners
 
         // Lookup the swipe container view
-        swipeContainer = view.findViewById(R.id.swipeContainer)
+        swipeContainer = view.findViewById(R.id.swipeContainerGallery)
         // Setup refresh listener which triggers new data loading
 
         swipeContainer.setOnRefreshListener {
@@ -67,7 +66,7 @@ open class HomeFragment : Fragment() {
             android.R.color.holo_orange_light,
             android.R.color.holo_red_light)
 
-        postsRecyclerView = view.findViewById(R.id.postsRecyclerView)
+        postsRecyclerView = view.findViewById(R.id.galleryRecyclerView)
         // Steps to populate RecyclerView
         // 1. Create a layout for each row in RecyclerView
         // 2. Create data source for each row (this is the Breed class)

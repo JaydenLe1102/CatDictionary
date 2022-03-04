@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -42,7 +43,7 @@ class BreedSummaryPostAdapter(private val context: Context, private val breeds: 
         notifyDataSetChanged()
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvBreedName = itemView.findViewById<TextView>(R.id.tvBreedName)
         val ivBreedImage = itemView.findViewById<ImageView>(R.id.ivBreedImage)
         val tvBreedDescription = itemView.findViewById<TextView>(R.id.tvBreedDescription)
@@ -65,6 +66,7 @@ class BreedSummaryPostAdapter(private val context: Context, private val breeds: 
             // use Glide to bind image to its ivBreedImage
             Glide.with(itemView.context).load(breed.imageurl).into(ivBreedImage)
         }
+
     }
 
     companion object {

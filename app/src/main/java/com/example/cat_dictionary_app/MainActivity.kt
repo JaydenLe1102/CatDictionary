@@ -3,7 +3,6 @@ package com.example.cat_dictionary_app
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
-import android.view.MenuItem
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -14,12 +13,12 @@ import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.cat_dictionary_app.data.Breed
+import com.example.cat_dictionary_app.fragments.GalleryFragment
 import com.example.cat_dictionary_app.fragments.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.Headers
 import org.json.JSONException
 
-import androidx.core.view.MenuItemCompat.getActionView
 import com.example.cat_dictionary_app.fragments.SearchFragment
 
 
@@ -47,17 +46,13 @@ class MainActivity : AppCompatActivity() {
                     fragmentToShow = HomeFragment()
                     Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                 }
-                R.id.action_search->{
-                    fragmentToShow = SearchFragment()
-                    Toast.makeText(this, "Search", Toast.LENGTH_SHORT).show()
-                }
                 R.id.action_watch->{
                     // TODO: Navigate to the Watch Screen
                     Toast.makeText(this, "Watch", Toast.LENGTH_SHORT).show()
                 }
-                R.id.action_index->{
-                    // TODO: Navigate to the Index Screen
-                    Toast.makeText(this, "Index", Toast.LENGTH_SHORT).show()
+                R.id.action_gallery->{
+                    fragmentToShow = GalleryFragment()
+                    Toast.makeText(this, "Gallery", Toast.LENGTH_SHORT).show()
                 }
             }
 

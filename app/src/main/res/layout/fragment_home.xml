@@ -6,12 +6,12 @@
     tools:context=".fragments.HomeFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeContainer"
+        android:id="@+id/swipeContainerGallery"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/postsRecyclerView"
+            android:id="@+id/galleryRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

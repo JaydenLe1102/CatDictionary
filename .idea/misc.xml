@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/breed_summary_post.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/fragment_gallery.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/fragment_home.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/gallery_image.xml" value="0.27447916666666666" />
         <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/layout/item_post.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.27447916666666666" />
+        <entry key="..\:/AndroidStudioProjects/CatDictionary/app/src/main/res/menu/menu_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/drawable-anydpi/searchIconActionBar.xml" value="0.33" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/drawable-anydpi/search_icon_actionbar.xml" value="0.452" />
         <entry key="..\:/Jayden/Android/Cat_Dictionary_App/app/src/main/res/drawable/cat_logo_background.xml" value="0.3195" />
