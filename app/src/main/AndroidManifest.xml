@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cat_Dictionary_App">
         <activity
+            android:name=".MoreDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
