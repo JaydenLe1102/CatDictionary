@@ -14,6 +14,7 @@ import com.codepath.asynchttpclient.RequestHeaders
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import com.example.cat_dictionary_app.BuildConfig
+import com.example.cat_dictionary_app.MainActivity
 import com.example.cat_dictionary_app.R
 import com.example.cat_dictionary_app.data.Breed
 import okhttp3.Headers
@@ -34,11 +35,11 @@ open class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-//        val listbreeds = (activity as MainActivity).getBreedList()
-//        if (!listbreeds.isEmpty()){
-//            breeds.clear()
-//            breeds.addAll(listbreeds)
-//        }
+        val listbreeds = (activity as MainActivity).getBreedList()
+        if (!listbreeds.isEmpty()){
+            breeds.clear()
+            breeds.addAll(listbreeds)
+        }
 
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
@@ -79,7 +80,10 @@ open class HomeFragment : Fragment() {
 
         // Call populateHomeFeed once var client is initialized
 
-        populateHomeFeed()
+        if (breeds.size == 0)
+        {
+            populateHomeFeed()
+        }
 
     }
 
@@ -90,7 +94,7 @@ open class HomeFragment : Fragment() {
         swipeContainer.setRefreshing(false)
     }
 
-    public open fun populateHomeFeed(query: Int = 0) {
+    open fun populateHomeFeed(query: Int = 0) {
         // I put this function here because the search function need this function too.
         // You can call this function in the HomeFragment by using
         // (activity as MainActivity).populateHomeFeed();

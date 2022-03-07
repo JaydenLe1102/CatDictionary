@@ -19,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import okhttp3.Headers
 import org.json.JSONException
 
-import com.example.cat_dictionary_app.fragments.SearchFragment
+//import com.example.cat_dictionary_app.fragments.SearchFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -99,18 +99,18 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun search(query: String) {
+    private fun search(key:String, query: Int = 0) {
         // I put this function here because the search function need this function too.
         // You can call this function in the HomeFragment by using
         // (activity as MainActivity).populateHomeFeed();
         //TODO: make this function call API with certain query with default not having any query
-        val urlToGet = "https://api.thecatapi.com/v1/breeds/search"
+        val urlToGet = "https://api.thecatapi.com/v1/breeds"
 
         val headers = RequestHeaders()
         headers.put("x-api-key", HomeFragment.CAT_API_KEY)
 
         val params = RequestParams()
-        params.put("q", query)
+        params.put("attach_breed", query)
 
         client.get(urlToGet,headers, params, object : JsonHttpResponseHandler() {
             override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON) {
@@ -118,11 +118,11 @@ class MainActivity : AppCompatActivity() {
                 // JsonException when the API gets updated with new header/query names
                 // and we don't want our app to crash in those cases
                 try {
+
                     breeds.clear()
-                    Breed.fromSearchBreedArray(json.jsonArray)
-                    breeds.addAll(Breed.fromJsonArray(json.jsonArray))
-                    fragmentToShow = SearchFragment()
-                    bottom_navigation.selectedItemId = R.id.action_search
+                    breeds.addAll(Breed.filterWithKey(json.jsonArray, key))
+                    fragmentToShow = HomeFragment()
+                    bottom_navigation.selectedItemId = R.id.action_home
                     if (fragmentToShow != null) {
                         // call commit so that things happen
                         // replace the container in the layout file with the fragment that we want to show

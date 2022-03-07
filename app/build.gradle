@@ -69,4 +69,7 @@ dependencies {
     //coroutine for async function call
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.0.1"
+
+    //okhttpclient
+    implementation 'com.squareup.okhttp3:okhttp:4.1.0'
 }
