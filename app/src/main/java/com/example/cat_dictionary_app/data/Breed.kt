@@ -135,5 +135,21 @@ data class Breed (
                 return jsonObject.getString("url")
             }
 
+            fun getBreedNamelist(breedjsonarray: JSONArray): ArrayList<String>
+            {
+                val re = ArrayList<String>()
+
+                for ( i in 0 until breedjsonarray.length())
+                {
+                    val breedJson = breedjsonarray.getJSONObject(i)
+                    //Log.i(TAG, breedJson.toString())
+                    // imageURL has a default URL in case the breed jsonObj doesn't have
+                    // key "image" in itself or key "url" in its image jsonObj
+                    re.add(breedJson.getString("name"))
+                }
+
+                return re
+            }
+
         }
 }

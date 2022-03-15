@@ -46,6 +46,10 @@ open class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //for autocomplete
+        setHasOptionsMenu(true)
+
         // This is where we set up our views and clicklisteners
 
         // Lookup the swipe container view
@@ -85,6 +89,7 @@ open class HomeFragment : Fragment() {
             populateHomeFeed()
         }
 
+
     }
 
     private fun refreshTimeline() {
@@ -116,6 +121,8 @@ open class HomeFragment : Fragment() {
                     breeds.addAll(Breed.fromJsonArray(json.jsonArray))
                     breeds.shuffle()
                     breedSummaryPostAdapter.notifyDataSetChanged()
+                    (activity as MainActivity).setBreedNameList(Breed.getBreedNamelist(json.jsonArray))
+
                 } catch (e: JSONException) {
                     Log.e(TAG, "Encountered exception $e")
                     Log.i(TAG, "json is: $json.jsonArray.getJSONObject(0)")
